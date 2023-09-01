@@ -1,0 +1,531 @@
+UNIT 1 
+------------------------------------------
+Q1
+------------------
+<?xml version="1.0"?>
+<Student>
+    <StudentName>Shubh</StudentName>
+    <PersonalInfo>
+        <Address>Ahmedabad</Address>
+        <Birthdate>2004-06-08</Birthdate>
+        <Gender>Male</Gender>
+        <MobileNo>+919876543210</MobileNo>
+    </PersonalInfo>
+    <Result>
+        <Total>100</Total>
+        <Percentage>90</Percentage>
+        <Grade>A</Grade>
+    </Result>
+</Student>
+
+--------------------
+Q2
+-------------
+<?xml version="1.0"?>
+<Student>
+    <PersonalInfo>
+        <RollNo>12345</RollNo>
+        <Name>Shubh</Name>
+        <Address>Ahmedabad</Address>
+        <Mobile>+1234567890</Mobile>
+        <DOB>1995-07-01</DOB>
+        <Age>28</Age>
+        <Qualification>Bachelor's Degree</Qualification>
+    </PersonalInfo>
+</Student>
+----------------------
+Q3
+----------------------
+<?xml version="1.0"?>
+<OrderDetail>
+    <OrderNumber>12345</OrderNumber>
+    <OrderDate>2023-07-19</OrderDate>
+    <OrderAmount>250.00</OrderAmount>
+    <Item>
+        <ItemPrice>50.00</ItemPrice>
+        <ItemName>Pen</ItemName>
+        <Quantity>3</Quantity>
+    </Item>
+    <Item>
+        <ItemPrice>30.00</ItemPrice>
+        <ItemName>Pencil</ItemName>
+        <Quantity>2</Quantity>
+    </Item>
+</OrderDetail>
+------------------------
+Q4
+-----------------------
+<?xml version="1.0"?>
+<Email>
+    <Message from="sender@example.com" to="recipient@example.com" subject="Example Subject">
+        This is the content of the email message.
+    </Message>
+</Email>
+-----------------------
+Q5
+-----------------------
+<?xml version="1.0"?>
+<Books>
+    <book title="Book Title 1">
+        <author>Author 1</author>
+        <year>2022</year>
+        <publisher>Publisher 1</publisher>
+    </book>
+</Books>
+-----------------------
+Q6
+-----------------------
+<?xml version="1.0"?>
+<Student>
+    <Name fname="Shubh" lname="Udhani" />
+    <ID>12345</ID>
+    <Plan>
+        <courses year="2023">
+            <course>
+                <name>IMSCIT</name>
+                <shortName>IM</shortName>
+                <record>
+                    <Grade>B</Grade>
+                    <date>2023-07-19</date>
+                </record>
+            </course>
+        </courses>
+    </Plan>
+</Student>
+----------------------
+Q7
+----------------------
+<?xml version="1.0"?>
+<Email>
+    <from>sender@example.com</from>
+    <to>recipient@example.com</to>
+    <content>
+        <person>Shubh</person>
+        <exercises>
+            <exercise>
+                <topic>Topic 1</topic>
+                <description>Description of Exercise 1</description>
+            </exercise>
+        </exercises>
+        <course>IMSCIT</course>
+    </content>
+</Email>
+----------------------
+Q8
+----------------------
+<?xml version="1.0"?>
+<Student>
+    <Roll_no>12345</Roll_no>
+    <Name>Shubh</Name>
+    <Marks>95</Marks>
+    <Rank>1</Rank>
+</Student>
+-----------------------
+Q9
+-----------------------
+<?xml version="1.0"?>
+	<Letter>
+    <contact type="manager">
+        <name>Shubh</name>
+        <address>Ahmedabad</address>
+        <city>City</city>
+        <pin>12345</pin>
+        <state>State</state>
+        <flag gender="male" />
+    </contact>
+    <salutation>Dear Sir/Madam</salutation>
+    <paragraph>This is the content of the letter.</paragraph>
+    <closing>Yours sincerely,</closing>
+    <signature>Shubh</signature>
+</Letter>
+-----------------------
+Q10
+-----------------------
+<?xml version="1.0"?>
+<Employee>
+    <Emp_no>12345</Emp_no>
+    <name>Shubh</name>
+    <Department>IT</Department>
+    <Manager_Name>Subramaniam</Manager_Name>
+    <ProjectAssign>
+        <Proj_1>Project 1</Proj_1>
+        <Proj_2>Project 2</Proj_2>
+        <Proj_3>Project 3</Proj_3>
+    </ProjectAssign>
+    <Designation>Software Engineer</Designation>
+</Employee>
+-----------------------
+
+
+UNIT 2
+
+
+-----------------------
+Q1
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE students SYSTEM "Q1.dtd">
+<students>
+  <student>
+    <RollNo>101</RollNo>
+    <Name>Shubh	Udhani</Name>
+    <Address>Ahmedabad</Address>
+    <Mobile>+1234567890</Mobile>
+    <DOB>2004-06-08</DOB>
+    <Age>19</Age>
+    <Qualification>Bachelor's Degree</Qualification>
+  </student>
+</students>
+-----------------------
+DTD FILE
+-----------------------
+<!ELEMENT students (student+)>
+<!ELEMENT student (RollNo, Name, Address, Mobile, DOB, Age, Qualification)>
+<!ELEMENT RollNo (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Mobile (#PCDATA)>
+<!ELEMENT DOB (#PCDATA)>
+<!ELEMENT Age (#PCDATA)>
+<!ELEMENT Qualification (#PCDATA)>
+-----------------------
+
+Q2
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE email SYSTEM "email.dtd">
+<email>
+  <message from="sender@example.com" to="recipient@example.com" subject="Hello">
+    This is the content of the email message.
+  </message>
+</email>
+-----------------------
+DTD FILE
+-----------------------
+<!ELEMENT email (message+)>
+<!ELEMENT message (#PCDATA)>
+<!ATTLIST message
+          from CDATA #REQUIRED
+          to   CDATA #REQUIRED
+          subject CDATA #REQUIRED>
+-----------------------
+
+Q3
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE OrderDetail SYSTEM "Q3.dtd">
+<OrderDetail>
+  <Order_Detail OrderNumber="ORD123" OrderDate="2023-07-25" OrderAmount="500.00">
+    <Item>
+      <ItemPrice>100.00</ItemPrice>
+      <ItemName>Product A</ItemName>
+      <Quantity>2</Quantity>
+    </Item>
+    <Item>
+      <ItemPrice>50.00</ItemPrice>
+      <ItemName>Product B</ItemName>
+      <Quantity>5</Quantity>
+    </Item>
+  </Order_Detail>
+</OrderDetail>
+-----------------------
+DTD FILE 
+-----------------------
+<!ELEMENT OrderDetail (Order_Detail+)>
+<!ELEMENT Order_Detail (Item+)>
+<!ATTLIST Order_Detail
+          OrderNumber CDATA #REQUIRED
+          OrderDate   CDATA #IMPLIED
+          OrderAmount CDATA #IMPLIED>
+<!ELEMENT Item (ItemPrice, ItemName, Quantity)>
+<!ELEMENT ItemPrice (#PCDATA)>
+<!ELEMENT ItemName (#PCDATA)>
+<!ELEMENT Quantity (#PCDATA)>
+-----------------------
+
+Q4
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE Student SYSTEM "Q4.dtd">
+<Student>
+  <StudentName>Shubh</StudentName>
+  <PersonalInfo>
+    <Address>Ahmedabad</Address>
+    <Birthdate>2000-05-15</Birthdate>
+    <Gender>Male</Gender>
+    <MobileNo>+1234567890</MobileNo>
+  </PersonalInfo>
+  <Result>
+    <Total>450</Total>
+    <Percentage>90</Percentage>
+    <Grade>Dist.</Grade>
+  </Result>
+</Student>
+-----------------------
+DTD FILE
+-----------------------
+<!ELEMENT Student (StudentName, PersonalInfo, Result)>
+<!ELEMENT StudentName (#PCDATA)>
+<!ELEMENT PersonalInfo (Address, Birthdate, Gender, MobileNo)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Birthdate (#PCDATA)>
+<!ELEMENT Gender (#PCDATA)>
+<!ELEMENT MobileNo (#PCDATA)>
+<!ELEMENT Result (Total, Percentage, Grade)>
+<!ELEMENT Total (#PCDATA)>
+<!ELEMENT Percentage (#PCDATA)>
+<!ELEMENT Grade (Pass | First | Dist. | Second | Fail)>
+<!ELEMENT Pass (#PCDATA)>
+<!ELEMENT First (#PCDATA)>
+<!ELEMENT Dist. (#PCDATA)>
+<!ELEMENT Second (#PCDATA)>
+<!ELEMENT Fail (#PCDATA)>
+-----------------------
+
+Q5
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE Books SYSTEM "Q5.dtd">
+<Books>
+  <book title="XML">
+    <author>John Doe</author>
+    <year>2023</year>
+    <publisher>PublishCo</publisher>
+  </book>
+  <book title="DCN">
+    <author>Jane Smith</author>
+    <year>2022</year>
+    <publisher>BooksCo</publisher>
+  </book>
+</Books>
+-----------------------
+DTD FILE
+-----------------------
+<!ELEMENT Books (book+)>
+<!ELEMENT book (author, year, publisher)>
+<!ATTLIST book
+          title (XML | DCN) #REQUIRED>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+-----------------------
+
+Q6
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE Student SYSTEM "Q6.dtd">
+<Student>
+  <Name fname="John" Lname="Doe" />
+  <ID>12345</ID>
+  <Plan>
+    <courses year="2023">
+      <course>
+        <name>Mathematics</name>
+        <shortName>MATH101</shortName>
+        <record>
+          <Grade>A</Grade>
+          <date>2023-07-25</date>
+        </record>
+      </course>
+      <course>
+        <name>English</name>
+        <shortName>ENG101</shortName>
+        <record>
+          <Grade>B+</Grade>
+          <date>2023-07-26</date>
+        </record>
+        <record>
+          <Grade>A-</Grade>
+          <date>2023-07-28</date>
+        </record>
+      </course>
+    </courses>
+  </Plan>
+</Student>
+-----------------------
+DTD FILE
+-----------------------
+<!ELEMENT Student (Name, ID, Plan)>
+<!ELEMENT Name EMPTY>
+<!ATTLIST Name
+          fname CDATA #REQUIRED
+          Lname CDATA #REQUIRED>
+<!ELEMENT ID (#PCDATA)>
+<!ELEMENT Plan (courses)>
+<!ELEMENT courses (course*)>
+<!ATTLIST courses
+          year CDATA #REQUIRED>
+<!ELEMENT course (name, shortName, record+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT shortName (#PCDATA)>
+<!ELEMENT record (Grade, date)>
+<!ELEMENT Grade (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+-----------------------
+
+Q7
+-----------------------
+XML FILE 
+-----------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Email SYSTEM "Q7.dtd">
+<Email>
+  <from>sender@example.com</from>
+  <to>recipient@example.com</to>
+  <content>
+    Hello,
+    <person>John Doe</person> has completed the following exercises in the <course>XML Basics</course> course:
+
+    <exercises>
+      <exercise>
+        <topic>Introduction to XML</topic>
+        <description>Learn about XML syntax and elements.</description>
+      </exercise>
+      <exercise>
+        <topic>XML Attributes</topic>
+        <description>Understand how to use attributes in XML.</description>
+      </exercise>
+    </exercises>
+
+    Keep up the good work!
+
+    Regards,
+    Sender
+  </content>
+</Email>
+-----------------------
+DTD FILE 
+-----------------------
+<!ELEMENT Email (from, to, content)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT content (#PCDATA | person | exercises | course)*>
+<!ELEMENT person (#PCDATA)>
+<!ELEMENT exercises (exercise+)>
+<!ELEMENT exercise (topic, description)>
+<!ELEMENT topic (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+-----------------------
+
+Q8
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE Student SYSTEM "Q8.dtd">
+<Student>
+  <Roll_no>101</Roll_no>
+  <Name>John Doe</Name>
+  <Marks>
+    <web_technologies>85</web_technologies>
+    <XML>70</XML>
+    <J2EE>92</J2EE>
+    <NS>78</NS>
+  </Marks>
+  <Rank>1</Rank>
+</Student>
+-----------------------
+DTD FILE 
+-----------------------
+<!ELEMENT Student (Roll_no, Name, Marks, Rank)>
+<!ELEMENT Roll_no (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Marks (web_technologies, XML, J2EE, NS)>
+<!ELEMENT web_technologies (#PCDATA)>
+<!ELEMENT XML (#PCDATA)>
+<!ELEMENT J2EE (#PCDATA)>
+<!ELEMENT NS (#PCDATA)>
+<!ELEMENT Rank (#PCDATA)>
+-----------------------
+
+Q9
+-----------------------
+XML FILE 
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE Letter SYSTEM "Q9.dtd">
+<Letter>
+  <contact type="sender">
+    <name>John Doe</name>
+    <address>123 Main Street</address>
+    <city>New York</city>
+    <pin>10001</pin>
+    <state>NY</state>
+    <flag gender="male" />
+  </contact>
+  <salutation>Dear Recipient,</salutation>
+  <paragraph>This is a sample letter. It can contain multiple paragraphs.</paragraph>
+  <closing>Sincerely,</closing>
+  <signature>John Doe</signature>
+</Letter>
+-----------------------
+DTD FILE 
+-----------------------
+<!ELEMENT Letter (contact, salutation, paragraph, closing, signature)>
+<!ELEMENT contact (name, address, city, pin, state, flag)>
+<!ATTLIST contact
+          type (sender) #FIXED >
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT pin (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT flag EMPTY>
+<!ATTLIST flag
+          gender (male | female) "male">
+<!ELEMENT salutation (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT closing (#PCDATA)>
+<!ELEMENT signature (#PCDATA)>
+-----------------------
+
+Q10
+-----------------------
+XML FILE
+-----------------------
+<?xml version="1.0"?>
+<!DOCTYPE Student_info SYSTEM "Q10.dtd">
+<Student_info>
+  <Course c_id="c1" name="Computer Science">
+    <subject name="Java" />
+    <subject name="XML" />
+    <subject name="OS" />
+  </Course> 
+  <Student which_course="c1">
+    <name>John Doe</name>
+    <contact_no>12345</contact_no>
+  </Student>
+  <Student which_course="c1">
+    <name>Jane Smith</name>
+    <contact_no>67890</contact_no>
+  </Student>
+</Student_info>
+-----------------------
+DTD FILE
+-----------------------
+<!ELEMENT Student_info (Course*, Student+)>
+<!ELEMENT Course (subject+)>
+<!ATTLIST Course
+          c_id ID #REQUIRED
+          name CDATA #REQUIRED>
+<!ELEMENT Student (name, contact_no)>
+<!ATTLIST Student
+          which_course IDREF #REQUIRED>
+<!ELEMENT subject EMPTY>
+<!ATTLIST subject
+          name (Java | XML | OS) #REQUIRED>
+<!ENTITY nmtoken "NMTOKEN">
+-----------------------
+OVER!
